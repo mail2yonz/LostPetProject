@@ -65,7 +65,7 @@ public class PetController {
     {
         model.addAttribute ( "pet",petRepository.findOne ( id ) );
 
-        return "petlist";
+        return "showpet";
     }
 
     @RequestMapping("/update/{id}")

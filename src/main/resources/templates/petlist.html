@@ -88,7 +88,7 @@
         <td th:text="${pet.petStatus}"></td>
         <td>
             <tr><a th:href="@{/update/{id}(id=${pet.id})}">Modify</a></tr>
-           <tr><a th:href="@{/petdetail/{id}(id=${pet.id})}">Show Pets</a></tr>
+           <tr><a th:href="@{/petdetail/{id}(id=${pet.id})}">Pet Details</a></tr>
            <tr><a th:href="@{/delete/{id}(id=${pet.id})}">Delete</a></tr>
 
         </td>
