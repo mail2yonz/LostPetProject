@@ -1,6 +1,8 @@
 package com.example.demo;
 
 
+import org.hibernate.validator.constraints.NotEmpty;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -18,8 +20,9 @@ public class Pet {
     @NotNull
     @Size(min=2)
     private String name;
+//    @NotNull
+//    @Size(min=2)
     @NotNull
-    @Size(min=2)
     private long age;
     @NotNull
     @Size(min=2)
@@ -36,6 +39,19 @@ public class Pet {
     @NotNull
     @Size(min=2)
     private String ownersphoneNumber;
+    @NotNull
+    @Size(min=2)
+    private String petStatus;
+
+    public String getPetStatus() {
+        return petStatus;
+    }
+
+    public void setPetStatus(String petStatus) {
+        this.petStatus = petStatus;
+    }
+
+
 
     public long getId() {
         return id;

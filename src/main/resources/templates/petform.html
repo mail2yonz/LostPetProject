@@ -3,37 +3,81 @@
 <head>
     <meta charset="UTF-8"/>
     <title>Pet Form</title>
+    <link href="https://fonts.googleapis.com/css?family=Shrikhand" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="CSS/style.css"/>
 </head>
 <body>
+<nav class="navbar navbar-inverse">
 
+    <div class="container-fluid">
+        <div class="navbar-header">
+
+            <button type="button" class="navbar-toggle collapsed"
+                    data-toggle="collapse" data-target="#my-collapsible-navbar" aria-expanded="false">
+
+                <span class="sr-only">Toggle navigation</span>
+                <span class="glyphicon glyphicon-envelope"></span>
+
+
+            </button>
+
+            <a class="navbar-brand">Lost Pets</a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="my-collapsible-navbar">
+            <ul class="nav navbar-nav">
+                <li> <a class="navbar-brand" href="/add">Add a Pet Lost</a></li>
+                <li><a class="navbar-brand" href="/detail">Show Pets Lost</a></li>
+
+
+
+
+            </ul>
+
+        </div>
+
+    </div>
+</nav>
+
+
+<div class="container">
+    <div class="well">
 <form action="#" th:action="@{/process}" th:object="${pet}" method="post">
 <input type="hidden" th:field="*{id}"/>
 
-    PetName:<input type="text" th:field="*{name}"/>
+    <label>PetName:</label><input type="text" th:field="*{name}"/>
     <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span><br/>
 
-    PetsAge:<input type="number"  th:field="*{age}"/>
+    <label>PetsAge:</label><input type="number"  th:field="*{age}"/>
     <span th:if="${#fields.hasErrors('age')}" th:errors="*{age}"></span><br/>
 
 
-    PetsType:<input type="text"  th:field="*{type}"/>
+    <label>PetsType:</label><input type="text"  th:field="*{type}"/>
     <span th:if="${#fields.hasErrors('type')}" th:errors="*{type}"></span><br/>
 
-    PetsBreed:<input type="text"  th:field="*{breed}"/>
+    <label>PetsBreed:</label><input type="text"  th:field="*{breed}"/>
     <span th:if="${#fields.hasErrors('breed')}" th:errors="*{breed}"></span><br/>
 
-    PetsColor:<input type="text"  th:field="*{color}"/>
+    <label>PetsColor:</label> <input type="text"  th:field="*{color}"/>
     <span th:if="${#fields.hasErrors('color')}" th:errors="*{color}"></span><br/>
 
-    PetsFeature:<input type="text"  th:field="*{feature}"/>
+    <label>PetsFeature:</label><input type="text"  th:field="*{feature}"/>
     <span th:if="${#fields.hasErrors('feature')}" th:errors="*{feature}"></span><br/>
 
-    PetsOwner#:<input type="number"  th:field="*{ownersphoneNumber}"/>
+    <label>PetsOwner#:</label><input type="text"  th:field="*{ownersphoneNumber}"/>
     <span th:if="${#fields.hasErrors('ownersphoneNumber')}" th:errors="*{ownersphoneNumber}"></span><br/>
+
+    <label>PetStatus:</label><input type="text" th:field="*{petStatus}" placeholder="type lost or found"/>
+    <span th:if="${#fields.hasErrors('petStatus')}" th:errors="*{petStatus}"></span>
 
     <input type="submit" value="Submit"/>
 
 </form>
+    </div>
+</div>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="http://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
 
 </body>
 </html>

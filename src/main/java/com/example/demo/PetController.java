@@ -23,6 +23,13 @@ public class PetController {
     {
         return "mainpage";
     }
+    @RequestMapping("/detail")
+    public String showPerson( Model model)
+    {
+        model.addAttribute ( "pets" ,petRepository.findAll (  ));
+
+        return "petlist";
+    }
 
     @RequestMapping("/")
     public String listPet(Model model)
@@ -43,6 +50,7 @@ public class PetController {
     @PostMapping("/process")
     public String processForm(@Valid Pet pet , BindingResult result)
     {
+        System.out.println (result );
            if(result.hasErrors ())
            {
                return "petform";
@@ -57,7 +65,7 @@ public class PetController {
     {
         model.addAttribute ( "pet",petRepository.findOne ( id ) );
 
-        return "show";
+        return "petlist";
     }
 
     @RequestMapping("/update/{id}")

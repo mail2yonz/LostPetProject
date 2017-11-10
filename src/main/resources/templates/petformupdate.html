@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Pets After updated</title>
+</head>
+<body>
+<div class="container">
+    <div class="well">
+<form action="#" th:action="@{/process}" th:object="${pet}" method="post">
+    <input type="hidden" th:field="*{id}"/>
+
+    <label>PetName:</label><input type="text" th:field="*{name}"/>
+    <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span><br/>
+
+   <label>PetsAge:</label> <input type="number"  th:field="*{age}"/>
+    <span th:if="${#fields.hasErrors('age')}" th:errors="*{age}"></span><br/>
+
+
+    <label>PetsType:</label><input type="text"  th:field="*{type}"/>
+    <span th:if="${#fields.hasErrors('type')}" th:errors="*{type}"></span><br/>
+
+    <label>PetsBreed:</label><input type="text"  th:field="*{breed}"/>
+    <span th:if="${#fields.hasErrors('breed')}" th:errors="*{breed}"></span><br/>
+
+    <label>PetsColor:</label><input type="text"  th:field="*{color}"/>
+    <span th:if="${#fields.hasErrors('color')}" th:errors="*{color}"></span><br/>
+
+    <label>PetsFeature:</label><input type="text"  th:field="*{feature}"/>
+    <span th:if="${#fields.hasErrors('feature')}" th:errors="*{feature}"></span><br/>
+
+    <label>PetsOwner#:</label><input type="text"  th:field="*{ownersphoneNumber}"/>
+    <span th:if="${#fields.hasErrors('ownersphoneNumber')}" th:errors="*{ownersphoneNumber}"></span><br/>
+
+
+    <input type="submit" value="Submit"/>
+
+</form>
+    </div>
+</div>
+
+</body>
+</html>
