@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Show a Pet Detail</title>
+</head>
+<body>
+
+<a href="/">Show All The Pets </a><br/>
+<label>Pets Name: </label><span th:text ="${pet.name}"></span><br/>
+<label>Pets Age: </label><span th:text="${pet.age}"></span><br/>
+<label>Pets Type: </label><span th:text="${pet.type}"></span><br/>
+<label>Pets Breed: </label><span th:text="${pet.breed}"></span><br/>
+<label>Pets Colour: </label><span th:text="${pet.color}"></span><br/>
+<label>Pets Features: </label><span th:text="${pet.feature}"></span><br/>
+<label>Pet ownersphoneNumber: </label><span th:text="${pet.ownersphoneNumber}"></span><br/>
+<label>Pets Status: </label><span th:text="${pet.petStatus}"></span><br/>
+
+<a th:href="@{/delete/{id}(id=${pet.id})}">Delete This Pet from The Lost List</a>
+
+</body>
+</html>
